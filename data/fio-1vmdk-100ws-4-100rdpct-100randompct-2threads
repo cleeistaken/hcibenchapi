@@ -1,0 +1,28 @@
+; Auto generated FIO parameter file
+; block_size:     4
+; testing_time:   300 
+; interval_time:  None
+; warmup_time:    60
+; nb_disks:       1
+; io_rate:        None
+; read_pct:       100
+; random_pct:     100
+; nb_threads:     2
+; working_set:    100
+
+[global]
+runtime=300
+time_based=1
+ramp_time=60
+readwrite=randread
+random_generator=tausworthe64
+blocksize=4
+ioengine=libaio
+group_reporting
+continue_on_error=all
+
+[job0]
+filename=/dev/sda
+direct=1
+size=100%
+iodepth=2
